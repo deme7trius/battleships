@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Battleships</title>
+</head>
+
+<body>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .main__wrap {
+            display: flex;
+            max-width: 350px;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            padding: 10px;
+            margin: 0 auto;
+        }
+
+        .ground {
+            width: 300px;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .square {
+            width: 30px;
+            height: 30px;
+            font-size: 2em;
+            line-height: 0.5;
+            text-align: center;
+        }
+
+        .x {
+            color: rgb(46, 44, 44);
+            font-size: 2em;
+        }
+
+        .input {
+            text-transform: uppercase;
+        }
+
+        .hacked .square:not(.hackedShip) {
+            opacity: 0;
+        }
+
+        .ground__container,
+        .numbers {
+            display: flex;
+        }
+
+        .letters,
+        .wrap {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .letters {
+            justify-content: flex-end;
+        }
+
+        .letters .square,
+        .numbers .square,
+        .x .square {
+            font-size: 1.5em;
+            line-height: 1.5;
+        }
+
+        .field__wrap {
+            width: 100%;
+            display: flex;
+            margin: 20px;
+        }
+
+        .input {
+            width: 100%;
+        }
+    </style>
+    <div class="main__wrap">
+        <div class="ground__container">
+            <div class="letters"></div>
+            <div class="wrap">
+                <div class="numbers"></div>
+                <div class="ground"></div>
+            </div>
+        </div>
+        <div class="field__wrap">
+            <input type="text" id="addCoords" class="input" placeholder="Enter coordinates (row,col), eg A5">
+            <button id="fire" onclick="fire()">Fire</button>
+            <!-- <button id="hack" class="hack" onmousedown="hack()" onmouseup="hackOff()">Hack</button> -->
+        </div>
+        <div class="message"></div>
+        <p><i>*Fire with a 'show' command in order to see the solution.</i></p>
+    </div>
+    <script src="bs.js"></script>
+</body>
+
+</html>
